@@ -8,6 +8,7 @@ import by.htp.treasure.dao.TreasureDAO;
 public class FileTreasureDAO implements TreasureDAO{
 
 	private Scanner scan;
+	private int counter;
 	
 	
 	
@@ -15,9 +16,6 @@ public class FileTreasureDAO implements TreasureDAO{
 	public void viewAllTreasures() {
 		try {
 			scan = new Scanner(new File("resources/treasures.txt"));
-			System.out.println("\n-----------------------------------------------------------------------");
-			System.out.println("List of all treasures found in Dragon's lair:");
-			System.out.println("\n-----------------------------------------------------------------------");
 			while(scan.hasNext()) {
 				String a = scan.next();
 				String b = scan.next();
@@ -35,8 +33,6 @@ public class FileTreasureDAO implements TreasureDAO{
 		String treasureName="";
 		try {
 			scan = new Scanner(new File("resources/treasures.txt"));
-			System.out.println("\n-----------------------------------------------------------------------");
-			System.out.println("\nMost expensive item found in Dragon's lair:\n");
 			while(scan.hasNext()) {
 				String a = scan.next();
 				int b = scan.nextInt();
@@ -76,7 +72,7 @@ public class FileTreasureDAO implements TreasureDAO{
 	
 	@Override
 	public void findTreasureByPrice(int price) {
-		int counter = 0;
+		this.counter = 0;
 		try {
 			scan = new Scanner(new File("resources/treasures.txt"));
 			while(scan.hasNext()) {
@@ -89,11 +85,19 @@ public class FileTreasureDAO implements TreasureDAO{
 						continue;
 					}
 			}
-			if ( counter == 0 ) {
-				System.out.println("Unfortunatly no items found matching that price, please try again.");
-			}
 		}catch (Exception e) {
 			System.out.println("could not find the file");
 		}
 	}
+
+
+	public int getCounter() {
+		return counter;
+	}
+
+
+	public void setCounter(int counter) {
+		this.counter = counter;
+	}
+	
 }

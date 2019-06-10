@@ -34,6 +34,7 @@ public class Controller {
 	
 	public void findByPrice() {
 		int userPrice;
+		int tempCounter;
 		System.out.print("Please enter price here: ");
 		@SuppressWarnings("resource")
 		Scanner scanUser = new Scanner(System.in);
@@ -41,6 +42,12 @@ public class Controller {
 		System.out.println("-----------------------------------------------------------------------");
 		System.out.println("\nList of items matching your price found:\n");
 		treasures.findTreasureByPrice(userPrice);
+		tempCounter = treasures.getCounter();
+		if(tempCounter == 0) {
+			System.out.println("Unfortunatly no items found matching that price, please try again.");
+		} else {
+			treasures.setCounter(0);
+		}
 		System.out.println("-----------------------------------------------------------------------");
 	}
 }
