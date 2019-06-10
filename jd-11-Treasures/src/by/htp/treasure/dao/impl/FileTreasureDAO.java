@@ -54,20 +54,15 @@ public class FileTreasureDAO implements TreasureDAO{
 	
 	@SuppressWarnings("resource")
 	@Override
-	public void findTreasuresToSetPrice() {
-		int userSum;
+	public void findTreasuresToSetPrice(int setPrice) {
 		int treasureSum = 0;
-		Scanner scanUser = new Scanner(System.in);
-		System.out.print("Please enter the sum of gold you have: ");
-		userSum = scanUser.nextInt();
 		try {
 			scan = new Scanner(new File("resources/treasures.txt"));
-			System.out.println("\nItems found in Dragon's lair:\n");
 			
-			while(scan.hasNext() && treasureSum < userSum) {
+			while(scan.hasNext() && treasureSum < setPrice) {
 				String a = scan.next();
 				int b = scan.nextInt();
-					if (treasureSum + b < userSum) {
+					if (treasureSum + b < setPrice) {
 						System.out.printf("%-30s %s\n", a,b);
 						treasureSum = treasureSum + b;
 					} else {
@@ -79,23 +74,15 @@ public class FileTreasureDAO implements TreasureDAO{
 		}
 	}
 	
-	@SuppressWarnings("resource")
 	@Override
-	public void findTreasureByPrice() {
-		int userPrice;
+	public void findTreasureByPrice(int price) {
 		int counter = 0;
-		
-		Scanner scanUser = new Scanner(System.in);
-		System.out.print("Please enter price here: ");
-		userPrice = scanUser.nextInt();
 		try {
 			scan = new Scanner(new File("resources/treasures.txt"));
-			System.out.println("\nList of items matching your price found:\n");
-			
 			while(scan.hasNext()) {
 				String a = scan.next();
 				int b = scan.nextInt();
-					if (b == userPrice) {
+					if (b == price) {
 						System.out.printf("%-30s %s\n", a,b);
 						counter++;
 					} else {

@@ -4,7 +4,7 @@ public interface TreasureDAO {
 	
 	void viewAllTreasures();
 	void findMostExpensiveTrease();
-	void findTreasuresToSetPrice();
-	void findTreasureByPrice();
+	void findTreasuresToSetPrice(int setPrice);
+	void findTreasureByPrice(int price);
 
 }
