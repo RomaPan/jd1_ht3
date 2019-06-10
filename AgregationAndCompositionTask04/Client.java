@@ -1,11 +1,12 @@
 package by.htp.les09.AgregationAndCompositionTask04;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Client {
 
 	private String nameSurename;
-	private ArrayList<Account> accounts;
+	private List<Account> accounts;
 	
 	
 	public Client (String nameSurename) {
@@ -24,8 +25,12 @@ public class Client {
 	}
 
 
-	public ArrayList<Account> getAccounts() {
+	public List<Account> getAccounts() {
 		return accounts;
+	}
+	
+	public void add(Account account) {
+		accounts.add(account);
 	}
 
 
