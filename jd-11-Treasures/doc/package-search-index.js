@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"by.htp.treasure.view"}]
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"by.htp.treasure.command"},{"l":"by.htp.treasure.command.impl"},{"l":"by.htp.treasure.controller"},{"l":"by.htp.treasure.dao"},{"l":"by.htp.treasure.dao.impl"},{"l":"by.htp.treasure.entity"},{"l":"by.htp.treasure.view"}]
